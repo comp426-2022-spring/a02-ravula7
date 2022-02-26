@@ -2,6 +2,7 @@
  * This module will emulate a coin flip given various conditions as parameters as defined below
  */
 
+
 /** Simple coin flip
  * 
  * Write a function that accepts no parameters but returns either heads or tails at random.
@@ -14,14 +15,16 @@
  * 
  */
 
-function coinFlip() {
-var flip = Math.random();
-if(flip/2 == 0){
+export function coinFlip() {
+let flip = Math.floor(Math.random()*10);
+
+if(flip%2 == 0){
   return "heads";
 }
 else{
   return "tails";
 }
+
 }
 
 /** Multiple coin flips
@@ -43,12 +46,11 @@ else{
     ]
  */
 
-function coinFlips(flips) {
-var flip;
+export function coinFlips(flips) {
 var arrofflips = [];
 for (var count = 0; count < flips; count++){
-  flip = Math.random();
-  if(flip/2 == 0){
+  let flip = Math.floor(Math.random()*10);
+  if(flip%2 == 0){
     arrofflips[count] = "heads";
   }
   else{
@@ -57,6 +59,7 @@ for (var count = 0; count < flips; count++){
 }
 return arrofflips; //as a string
 }
+//console.log(coinFlips(10));
 
 /** Count multiple flips
  * 
@@ -71,7 +74,7 @@ return arrofflips; //as a string
  * @returns {{ heads: number, tails: number }}
  */
 
-function countFlips(array) {
+export function countFlips(array) {
 var length = array.length;
 var heads = 0;
 var tails = 0;
@@ -98,11 +101,12 @@ return flipscounted;
  * returns: { call: 'tails', flip: 'heads', result: 'lose' }
  */
 
-function flipACoin(call) {
+
+export function flipACoin(call) {
   var flip = Math.random();
   const flipped;
   const result;
-  if(flip/2 == 0){
+  if(flip%2 == 0){
     flipped = "heads";
   }
   else{
@@ -114,6 +118,7 @@ function flipACoin(call) {
   else{
     result = "lose";
   }
+
 const flippedCoin = {
   call: call,
   flip: flipped,
@@ -121,6 +126,7 @@ const flippedCoin = {
 };
 return "{ call: '"+ this.call + "', flip: '" + this.flipped + "', result: '" + this.result + "' }";
 }
+
 
 /** Export 
  * 
