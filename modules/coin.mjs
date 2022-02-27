@@ -103,28 +103,25 @@ return flipscounted;
 
 
 export function flipACoin(call) {
-  var flip = Math.random();
-  const flipped;
-  const result;
+ /* var flip = Math.floor(Math.random()*10);
+  let flipped = null;
+  let result = null;
   if(flip%2 == 0){
     flipped = "heads";
   }
   else{
     flipped = "tails";
   }
+  */
+ let flipped = coinFlip()
+ let result = null;
   if(call==flipped){
     result = "win";
   }
   else{
     result = "lose";
   }
-
-const flippedCoin = {
-  call: call,
-  flip: flipped,
-  result: result,
-};
-return "{ call: '"+ this.call + "', flip: '" + this.flipped + "', result: '" + this.result + "' }";
+return "{ call: '"+ call + "', flip: '" + flipped + "', result: '" + result + "' }";
 }
 
 
